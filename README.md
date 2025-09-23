@@ -16,7 +16,7 @@ Este código pone en practica sistema básico de gestión de correo electrónico
 - **ServidorCorreo:** La clase ServidorCorreo ejecuta como el gestor central del sistema, manteniendo un registro de los usuarios y facilitando el envío de mensajes entre ellos. Utiliza un diccionario para almacenar los usuarios registrados y manera para registrar nuevos usuarios y enviar mensajes.
 
 - El diseño sigue los principios de encapsulamiento, reutilización y claridad, facilitando la extensión y el mantenimiento del sistema. Se emplean listas para la gestión de colecciones de mensajes, tuplas para información adicional inmutable y diccionarios para el acceso seguro a carpetas y usuarios.
-- 
+  
 ## Cómo usarlo
 1. Descarga el código.
 2. Ejecuta el archivo principal en Python 3.
