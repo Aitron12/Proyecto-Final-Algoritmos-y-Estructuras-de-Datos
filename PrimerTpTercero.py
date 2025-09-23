@@ -11,8 +11,8 @@ class Mensaje:
         self._remitente = remitente
         self._destinatario = destinatario
         self._contenido = contenido
-        self._info_extra = ("importante", "urgente")  # Tupla: ejemplo de información adicional
-
+        self._info_extra = ("importante", "urgente")  # Tupla
+    
     # Propiedad para acceder al remitente de forma segura
     @property
     def remitente(self):
@@ -107,4 +107,5 @@ class ServidorCorreo:
         if mensaje.destinatario in self._usuarios:
             self._usuarios[mensaje.destinatario].recibir_mensaje(mensaje)
         if mensaje.remitente in self._usuarios:
+
             self._usuarios[mensaje.remitente].enviar_mensaje(mensaje)
