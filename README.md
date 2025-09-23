@@ -9,7 +9,7 @@ Este código pone en practica sistema básico de gestión de correo electrónico
 
 - **Carpeta:** La clase Carpeta forma una carpeta de mensajes, como la bandeja de entrada o enviados. Utiliza una lista para almacenar los mensajes y ajusta métodos para agregar y listar los mismos.
 
---**Icorreo** La interfaz ICorreo define los sistema esenciales que debe implementar cualquier clase que gestione correos: enviar, recibir y listar mensajes. Esto asegura que todas las clases derivadas cumplan con la misma estructura y funcionalidad mínima.
+-**Icorreo** La interfaz ICorreo define los sistema esenciales que debe implementar cualquier clase que gestione correos: enviar, recibir y listar mensajes. Esto asegura que todas las clases derivadas cumplan con la misma estructura y funcionalidad mínima.
 
 - **Usuario:** La clase Usuario representa a un usuario del sistema. Cada usuario tiene un nombre y un diccionario de carpetas, permitiendo organizar los mensajes en diferentes niveles. Implementa los métodos definidos en la interfaz para enviar, recibir y listar mensajes
   
