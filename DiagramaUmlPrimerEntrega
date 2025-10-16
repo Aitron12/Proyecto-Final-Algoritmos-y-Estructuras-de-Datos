@@ -1,0 +1,48 @@
+@startuml
+
+class Mensaje {
+  - _remitente: str
+  - _destinatario: str
+  - _contenido: str
+  - _info_extra: tuple
+  + remitente
+  + destinatario
+  + contenido
+  + info_extra
+}
+
+class Carpeta {
+  - _nombre: str
+  - _mensajes: List<Mensaje>
+  + nombre
+  + agregar_mensaje(mensaje: Mensaje)
+  + listar_mensajes()
+}
+
+interface ICorreo {
+  + enviar_mensaje(mensaje: Mensaje)
+  + recibir_mensaje(mensaje: Mensaje)
+  + listar_mensajes(carpeta: str)
+}
+
+class Usuario {
+  - _nombre: str
+  - _carpetas: dict
+  + nombre
+  + enviar_mensaje(mensaje: Mensaje)
+  + recibir_mensaje(mensaje: Mensaje)
+  + listar_mensajes(carpeta: str)
+}
+
+class ServidorCorreo {
+  - _usuarios: dict
+  + registrar_usuario(usuario: Usuario)
+  + enviar(mensaje: Mensaje)
+}
+
+ICorreo <|.. Usuario
+Carpeta "1" o-- "*" Mensaje
+Usuario "1" o-- "*" Carpeta
+ServidorCorreo "1" o-- "*" Usuario
+
+@enduml
