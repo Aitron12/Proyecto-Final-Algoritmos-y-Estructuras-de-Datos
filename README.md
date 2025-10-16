@@ -1,26 +1,52 @@
- # Proyecto-Final-Algoritmos-y-Estructuras-de-Datos
-#Trabajo integrador propuesto por la materia Estructura de Datos en la Universidad Nacional Guillermo Brown
- Sistema de Correo en Python
+# Proyecto: Sistema de Gestión de Correos
 
-Este código pone en practica sistema básico de gestión de correo electrónico utilizando programación orientada a objetos en Python.
+## Descripción General
 
-## Estructura del código
-- **Mensaje:** La clase Mensaje describe un mensaje individual, almacenando el remitente,  destinatario, contenido y una tupla con información adicional. Los atributos son privados y se accede a ellos mediante propiedades, lo que garantiza el encapsulamiento y la protección de los datos.
+Este proyecto implementa un sistema de gestión de correos electrónicos orientado a objetos en Python, utilizando estructuras de datos tipo árbol para organizar carpetas y subcarpetas. El sistema permite enviar, recibir, buscar y mover mensajes entre carpetas, simulando el funcionamiento de un cliente de correo electrónico moderno. La estructura de carpetas es recursiva, permitiendo la creación de subcarpetas anidadas de manera flexible y eficiente.
 
-- **Carpeta:** La clase Carpeta forma una carpeta de mensajes, como la bandeja de entrada o enviados. Utiliza una lista para almacenar los mensajes y ajusta métodos para agregar y listar los mismos.
+### Características principales
+- Gestión de usuarios y registro en un servidor de correo.
+- Envío y recepción de mensajes entre usuarios registrados.
+- Organización de mensajes en carpetas y subcarpetas (estructura de árbol).
+- Búsqueda recursiva de mensajes por remitente o contenido.
+- Movimiento de mensajes entre carpetas.
+- Interfaz orientada a objetos, con uso de clases abstractas e interfaces.
 
-- **Icorreo** La interfaz ICorreo define los sistema esenciales que debe implementar cualquier clase que gestione correos: enviar, recibir y listar mensajes. Esto asegura que todas las clases derivadas cumplan con la misma estructura y funcionalidad mínima.
+## Organización del Grupo
 
-- **Usuario:** La clase Usuario representa a un usuario del sistema. Cada usuario tiene un nombre y un diccionario de carpetas, permitiendo organizar los mensajes en diferentes niveles. Implementa los métodos definidos en la interfaz para enviar, recibir y listar mensajes
-  
-- **ServidorCorreo:** La clase ServidorCorreo ejecuta como el gestor central del sistema, manteniendo un registro de los usuarios y facilitando el envío de mensajes entre ellos. Utiliza un diccionario para almacenar los usuarios registrados y manera para registrar nuevos usuarios y enviar mensajes.
+El desarrollo del proyecto fue realizado en equipo, con la siguiente distribución de roles y tareas:
 
-- El diseño sigue los principios de encapsulamiento, reutilización y claridad, facilitando la extensión y el mantenimiento del sistema. Se emplean listas para la gestión de colecciones de mensajes, tuplas para información adicional inmutable y diccionarios para el acceso seguro a carpetas y usuarios.
-  
-## Cómo usarlo
-1. Descarga el código.
-2. Ejecuta el archivo principal en Python 3.
-3. Modifica o amplía las clases según tus necesidades.
+- **Tomas Yapura**
+  - Diseño e implementación de la estructura de árbol para carpetas y subcarpetas.
+  - Desarrollo de la lógica de búsqueda y movimiento de mensajes.
+  - Documentación técnica del código.
+
+- **Aaron Lara**
+  - Implementación de la gestión de usuarios y servidor de correo.
+  - Integración de la lógica de envío y recepción de mensajes.
+  - Pruebas funcionales y validación del sistema.
+  - Diagrama Uml
+
+- **Guiliana Cristaldo**
+  - Apoyo en la definición de la arquitectura general del sistema.
+  - Revisión y mejora de la interfaz de usuario y experiencia de uso.
+  - Redacción y organización de la documentación del proyecto.
+
+## Estructura del Repositorio
+
+- `cuartaentrega_tomy.py`: Código principal del sistema de gestión de correos.
+- `README.md`: Este archivo, con la descripción y organización del proyecto.
+- (Agregar otros archivos relevantes según el avance del proyecto)
+
+## Instrucciones de Uso
+
+1. Clona este repositorio en tu máquina local.
+2. Asegúrate de tener Python 3.8 o superior instalado.
+3. Ejecuta el archivo principal para probar el sistema y sus funcionalidades.
+
+---
+
+Este proyecto es parte de una entrega académica y fue desarrollado colaborativamente por Tomas Yapura, Aaron Lara y Guiliana Cristaldo.
 
 ## Más información
 - [Documentación de clases abstractas en Python](https://docs.python.org/3/library/abc.html)
