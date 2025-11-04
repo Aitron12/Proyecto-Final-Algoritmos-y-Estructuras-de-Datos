@@ -93,6 +93,4 @@ Qué entrego con esto
 - Demo de uso (`Cuarta_entrega_tomy_demo.py`).
 - Tests unitarios (`tests/test_mod_mail.py`) que demuestran el comportamiento correcto.
 
-Contacto / notas finales
 
-Si necesitas que añada más tests (por ejemplo, casos límite), que adapte la demo, o que prepare el repositorio y la CI para GitHub Actions, dime cuál prefieres y lo hago.
