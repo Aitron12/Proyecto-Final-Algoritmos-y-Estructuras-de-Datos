@@ -1,53 +1,98 @@
-# Proyecto: Sistema de Gestión de Correos
+# Proyecto_Correcciones — Correciones y versión funcional
 
-## Descripción General
+Este directorio contiene una copia corregida y verificada del paquete `mod_mail` y artefactos de prueba. Está pensada para presentar las correcciones solicitadas para el trabajo académico sin modificar el código original.
 
-Este proyecto implementa un sistema de gestión de correos electrónicos orientado a objetos en Python, utilizando estructuras de datos tipo árbol para organizar carpetas y subcarpetas. El sistema permite enviar, recibir, buscar y mover mensajes entre carpetas, simulando el funcionamiento de un cliente de correo electrónico moderno. La estructura de carpetas es recursiva, permitiendo la creación de subcarpetas anidadas de manera flexible y eficiente.
+Resumen de las correcciones realizadas
 
-### Características principales
-- Gestión de usuarios y registro en un servidor de correo.
-- Envío y recepción de mensajes entre usuarios registrados.
-- Organización de mensajes en carpetas y subcarpetas (estructura de árbol).
-- Búsqueda recursiva de mensajes por remitente o contenido.
-- Movimiento de mensajes entre carpetas.
-- Interfaz orientada a objetos, con uso de clases abstractas e interfaces.
+- Completadas e implementadas las clases principales:
+  - `Mensaje` — modelo de mensaje con metadatos y propiedad `urgente`.
+  - `Carpeta` — almacena mensajes y soporta una cola de prioridad para mensajes urgentes (usa `heapq`).
+  - `Usuario` — administra un árbol de carpetas (raíz, bandeja_entrada, enviados) y operaciones de búsqueda/movimiento.
+  - `ServidorCorreo` — servidor simple que registra usuarios y entrega mensajes localmente.
+- Implementada la modelación de la red de servidores con la clase `Network` (grafo) y envío entre servidores usando BFS.
+- Añadidos tests unitarios con `pytest` que cubren prioridad en carpetas, envío local y envío a través de la red.
+- Añadido un demo sencillo `Cuarta_entrega_tomy_demo.py` que muestra un envío entre usuarios.
 
-## Organización del Grupo
+Estructura de este directorio
 
-El desarrollo del proyecto fue realizado en equipo, con la siguiente distribución de roles y tareas:
+```
+Proyecto_Correcciones/
+├─ mod_mail/
+│  ├─ __init__.py
+│  ├─ mensaje.py
+│  ├─ carpeta.py
+│  ├─ icorreo.py
+│  ├─ usuario.py
+│  ├─ servidor.py
+│  └─ network.py
+├─ Cuarta_entrega_tomy_demo.py
+└─ tests/
+   └─ test_mod_mail.py
+```
 
-- **Tomas Yapura**
-  - Diseño e implementación de la estructura de árbol para carpetas y subcarpetas.
-  - Desarrollo de la lógica de búsqueda y movimiento de mensajes.
-  - Documentación técnica del código.
+Requisitos
 
-- **Aaron Lara**
-  - Implementación de la gestión de usuarios y servidor de correo.
-  - Integración de la lógica de envío y recepción de mensajes.
-  - Pruebas funcionales y validación del sistema.
-  - Diagrama Uml
+- Python 3.10+ (probado con 3.13 en el entorno de desarrollo)
+- `pytest` para ejecutar tests
 
-- **Guiliana Cristaldo**
-  - Apoyo en la definición de la arquitectura general del sistema.
-  - Revisión y mejora de la interfaz de usuario y experiencia de uso.
-  - Redacción y organización de la documentación del proyecto.
+Instalación y ejecución (PowerShell)
 
-## Estructura del Repositorio
+1) Abrir PowerShell y situarse en este directorio:
 
-- `cuartaentrega_tomy.py`: Código principal del sistema de gestión de correos.
-- `README.md`: Este archivo, con la descripción y organización del proyecto.
-- (Agregar otros archivos relevantes según el avance del proyecto)
+```powershell
+Set-Location "c:\Users\Aitro\OneDrive\Escritorio\Aaron\Programacion\Codigos py\Estructura_De_Datos\Tp_1.py\Avance_Tp\Proyecto_Correcciones"
+```
 
-## Instrucciones de Uso
+2) (Opcional) Crear y activar un entorno virtual:
 
-1. Clona este repositorio en tu máquina local.
-2. Asegúrate de tener Python 3.8 o superior instalado.
-3. Ejecuta el archivo principal para probar el sistema y sus funcionalidades.
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
 
----
+3) Instalar dependencias mínimas:
 
-Este proyecto es parte de una entrega académica y fue desarrollado colaborativamente por Tomas Yapura, Aaron Lara y Guiliana Cristaldo.
+```powershell
+py -3 -m pip install --upgrade pip
+py -3 -m pip install pytest
+```
 
-## Más información
-- [Documentación de clases abstractas en Python](https://docs.python.org/3/library/abc.html)
-- [Listas en Python](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
+4) Ejecutar el demo:
+
+```powershell
+py -3 .\Cuarta_entrega_tomy_demo.py
+```
+
+Salida esperada: se imprimirá la lista de mensajes en la bandeja de entrada del destinatario.
+
+Ejecutar tests
+
+```powershell
+py -3 -m pytest -q
+```
+
+Deberías ver algo como:
+
+```
+3 passed in 0.0Xs
+```
+
+Verificación completa
+
+- El demo y los tests han sido ejecutados localmente en este entorno y pasaron.
+- Si quieres comprobar en una máquina limpia: clona el repositorio, instala `pytest` y ejecuta `pytest` y el demo como se indica arriba.
+
+Notas importantes
+
+- No se modificó el árbol original del proyecto: los archivos originales se conservaron tal como estaban en la carpeta raíz del trabajo. Esta carpeta `Proyecto_Correcciones` contiene la versión corregida y lista para revisión.
+- Si quieres que aplique las correcciones directamente sobre los archivos originales o que prepare un `pull request`/branch con los cambios, dímelo y lo preparo (haré backup antes de sobrescribir).
+
+Qué entrego con esto
+
+- Código corregido y listo para ejecutar (`mod_mail` con Network y prioridad en Carpeta).
+- Demo de uso (`Cuarta_entrega_tomy_demo.py`).
+- Tests unitarios (`tests/test_mod_mail.py`) que demuestran el comportamiento correcto.
+
+Contacto / notas finales
+
+Si necesitas que añada más tests (por ejemplo, casos límite), que adapte la demo, o que prepare el repositorio y la CI para GitHub Actions, dime cuál prefieres y lo hago.
