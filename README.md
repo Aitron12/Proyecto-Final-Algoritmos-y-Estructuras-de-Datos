@@ -1,3 +1,8 @@
+#GRUPO 40 - COMISION 2 - PROFESORES : AMBROSSIO DIEGO - BIANCO ANGEL LEONARDO
+#INTEGRANTES : YAPURA TOMAS - TOMYYAPURA9@GMAIL.COM
+               GIULIANA CRISTALDO - GIULIANACRISTALDO16@GMAIL.COM
+               AARON LARA - CHUKYDCLAZADA@HOTMAIL.COM
+
 # Proyecto_Correcciones — Correciones y versión funcional
 
 Este directorio contiene una copia corregida y verificada del paquete `mod_mail` y artefactos de prueba. Está pensada para presentar las correcciones solicitadas para el trabajo académico sin modificar el código original.
@@ -92,5 +97,6 @@ Qué entrego con esto
 - Código corregido y listo para ejecutar (`mod_mail` con Network y prioridad en Carpeta).
 - Demo de uso (`Cuarta_entrega_tomy_demo.py`).
 - Tests unitarios (`tests/test_mod_mail.py`) que demuestran el comportamiento correcto.
+
 
 
